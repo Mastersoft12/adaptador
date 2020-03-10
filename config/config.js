@@ -17,7 +17,7 @@ var config = convict({
 });
 
 const env = process.env.NODE_ENV || 'dev';
-config.loadFile(`config/file/dev.json`);
+config.loadFile(`config/file/${env}.json`);
 config.validate({ allowed: 'strict' });
 
 
