@@ -1,18 +1,11 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+const config = require('../config/config');
+const log = require('winston');
 
 
-app.post('/adaptador_apm', function (req, res) {
-    let body = req.body;
-    res.json({
-        datosEntrada: body
-    })
-});
+app.use(require('../routes/centralExterna'));
 
-app.listen(3000, ()=>{
-  console.log(`Escuchando en el puerto ${3000}`)
+app.listen(config.get('port'), ()=>{
+  log.log('info',`Escuchando en el puerto ${config.get('port')}`)
 });
