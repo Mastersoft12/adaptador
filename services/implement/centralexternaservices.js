@@ -1,6 +1,7 @@
 const query = require('../properties-reader/properties');
 const graphql = require('../graphql-request/graphql-request');
 const config = require('../../config/config');
+const logger = require('winston');
 
 let consultaCentralExterna = async (clavePrimaria) => {
     try {
@@ -9,13 +10,10 @@ let consultaCentralExterna = async (clavePrimaria) => {
         const resString = JSON.stringify(data).split('\\"').join('');
         return JSON.parse(resString);
     } catch (e) {
-        console.log(e);
-        throw new Error(e);
+        logger.log(e);
+        throw new Error('Error en el proceso de negocio');
     }
 }
-
-
-//consultaCentralExterna('22861442').then(x => console.log(x)); ../properties-reader/
 
 module.exports = {
     consultaCentralExterna
