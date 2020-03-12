@@ -13,7 +13,14 @@ var config = convict({
         default: 3000,
         env: 'PORT',
         arg: 'port'
-    }
+    },
+    queryce: {
+        doc: 'Query graphql para informacion central externa',
+        format: String,
+        env: 'QUERYCE',
+        default: '',
+        arg: 'queryce'
+    },
 });
 
 const env = process.env.NODE_ENV || 'dev';
