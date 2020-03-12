@@ -10,6 +10,7 @@ let consultaCentralExterna = async (clavePrimaria) => {
         return JSON.parse(resString);
     } catch (e) {
         console.log(e);
+        throw new Error(e);
     }
 }
 
