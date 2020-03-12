@@ -21,6 +21,14 @@ var config = convict({
         default: '',
         arg: 'queryce'
     },
+    endpoint: {
+        doc: 'Endpoint graphql productizar',
+        format: String,
+        env: 'ENDPOINT',
+        default: '',
+        arg: 'endpoint'
+    }
+
 });
 
 const env = process.env.NODE_ENV || 'dev';

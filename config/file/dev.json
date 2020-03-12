@@ -1,5 +1,6 @@
 {
   "env": "dev",
   "port": 3000,
-  "queryce": "./services/properties-reader/querys/centralExterna.graphql"
+  "queryce": "./services/properties-reader/querys/centralExterna.graphql",
+  "endpoint": "http://ecosistemariesgosce-api.us-east-1.elasticbeanstalk.com/graphql/"
 }
