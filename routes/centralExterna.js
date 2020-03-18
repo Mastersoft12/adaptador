@@ -28,4 +28,7 @@ let validarCamposEntrada =  async (body) =>{
     }
 }
 
-module.exports = app;
+module.exports ={
+    app,
+    validarCamposEntrada
+};
